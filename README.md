@@ -9,6 +9,16 @@ A full-stack Web3 application showcasing deep WalletConnect AppKit integration o
 ![Next.js](https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
+## 🌐 Live Demo
+
+**🔗 Production URL:** https://nftdropper-jslwahyg7-big14ways-projects.vercel.app
+
+**📜 Smart Contracts (Base Sepolia):**
+- **BaseNFTDrop:** [`0x108f8E5f5d593a56f3FBfeB197d934743eEf8fe8`](https://sepolia.basescan.org/address/0x108f8E5f5d593a56f3FBfeB197d934743eEf8fe8)
+- **StorageVault:** [`0x6559B28fd6bEc8ff450D4f654841AADa273ac876`](https://sepolia.basescan.org/address/0x6559B28fd6bEc8ff450D4f654841AADa273ac876)
+
+**🚰 Get Test ETH:** [Base Sepolia Faucet](https://www.coinbase.com/faucets/base-ethereum-goerli-faucet)
+
 ## ✨ Features
 
 ### 🎨 NFT Minter
@@ -104,23 +114,33 @@ npm install
 
 ### 2. Configure Environment
 
-Your `.env.local` is already set with the Project ID:
+Your `.env.local` is already configured with deployed contracts:
 
 ```bash
 # WalletConnect Project ID
 NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=1eebe528ca0ce94a99ceaa2e915058d7
 
-# Contract Address (update after deployment)
-NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=0x0000000000000000000000000000000000000000
+# Contract Address (ALREADY DEPLOYED ✅)
+NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=0x108f8E5f5d593a56f3FBfeB197d934743eEf8fe8
 
-# Chain ID (84532 = Base Sepolia, 8453 = Base Mainnet)
+# Chain ID (Base Sepolia testnet)
 NEXT_PUBLIC_CHAIN_ID=84532
 
 # IPFS Gateway
 NEXT_PUBLIC_IPFS_GATEWAY=https://gateway.pinata.cloud/ipfs/
 ```
 
-### 3. Deploy Smart Contracts
+**Note:** The contracts are already deployed on Base Sepolia! You can start testing immediately.
+
+### 3. Run Development Server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) and start minting!
+
+### 4. (Optional) Deploy Your Own Contracts
 
 #### Option A: Remix (Easiest)
 
@@ -241,14 +261,36 @@ This dApp demonstrates **leaderboard-worthy** integration:
 
 ## 📦 Deployment
 
-### Vercel (Recommended)
+### ✅ Already Deployed!
+
+**Live Production URL:** https://nftdropper-jslwahyg7-big14ways-projects.vercel.app
+
+The dApp is already deployed to Vercel with all environment variables configured. You can:
+- **Test it live** at the URL above
+- **Fork and deploy** your own version following the steps below
+
+### Deploy Your Own Version
+
+#### Via Vercel CLI (Fastest)
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy with environment variables
+vercel --prod --yes
+```
+
+Environment variables will be prompted during deployment.
+
+#### Via Vercel Dashboard
 
 1. Push code to GitHub
 2. Import project in [Vercel](https://vercel.com)
 3. Add environment variables:
    ```
    NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=1eebe528ca0ce94a99ceaa2e915058d7
-   NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=0xYourAddress
+   NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=0x108f8E5f5d593a56f3FBfeB197d934743eEf8fe8
    NEXT_PUBLIC_CHAIN_ID=84532
    NEXT_PUBLIC_IPFS_GATEWAY=https://gateway.pinata.cloud/ipfs/
    ```
@@ -338,12 +380,22 @@ MIT License - see LICENSE file
 
 ## 🔗 Links
 
+### Live Deployment
+- **🌐 Production dApp**: https://nftdropper-jslwahyg7-big14ways-projects.vercel.app
+- **📂 GitHub Repository**: https://github.com/big14way/nftdrop
+- **📊 Vercel Dashboard**: https://vercel.com/big14ways-projects/nftdropper
+
+### Smart Contracts (Base Sepolia)
+- **BaseNFTDrop**: https://sepolia.basescan.org/address/0x108f8E5f5d593a56f3FBfeB197d934743eEf8fe8
+- **StorageVault**: https://sepolia.basescan.org/address/0x6559B28fd6bEc8ff450D4f654841AADa273ac876
+
+### Resources
 - **Base Chain**: https://base.org
 - **WalletConnect**: https://walletconnect.com
 - **AppKit Docs**: https://docs.reown.com/appkit/overview
 - **Wagmi Docs**: https://wagmi.sh
-- **Base Faucet**: https://www.coinbase.com/faucets/base-ethereum-goerli-faucet
-- **Basescan**: https://basescan.org
+- **Base Sepolia Faucet**: https://www.coinbase.com/faucets/base-ethereum-goerli-faucet
+- **Basescan Explorer**: https://sepolia.basescan.org
 
 ## 💬 Support
 
