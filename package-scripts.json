@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "install-and-run": "npm install && npm run dev",
+    "fresh-install": "rm -rf node_modules package-lock.json && npm install",
+    "check-env": "node -e \"console.log('✅ Env vars loaded:', Object.keys(process.env).filter(k => k.startsWith('NEXT_PUBLIC_')).join(', '))\"",
+    "verify-setup": "npm run type-check && npm run lint"
+  }
+}

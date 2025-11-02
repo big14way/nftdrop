@@ -1,0 +1,37 @@
+{
+  "name": "Base Builder Badge #{{id}}",
+  "description": "Exclusive Builder Badge NFT minted on Base blockchain. This badge represents your participation in the WalletConnect + Base Builder Program, showcasing deep integration with AppKit, Wagmi, and on-chain functionality.",
+  "image": "ipfs://QmYourImageCIDHere",
+  "external_url": "https://base-nft-dropper.vercel.app",
+  "attributes": [
+    {
+      "trait_type": "Program",
+      "value": "WalletConnect Builder"
+    },
+    {
+      "trait_type": "Chain",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Integration",
+      "value": "AppKit + Wagmi"
+    },
+    {
+      "trait_type": "Year",
+      "value": "2024"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Builder"
+    }
+  ],
+  "properties": {
+    "category": "Badge",
+    "creators": [
+      {
+        "address": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb",
+        "share": 100
+      }
+    ]
+  }
+}
