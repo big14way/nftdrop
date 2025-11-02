@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt, usePublicClient } from "wagmi";
+import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
 import { toast } from "react-hot-toast";
 import { NFT_CONTRACT_ADDRESS, targetChain } from "@/config/wagmi";
 import { BASE_NFT_DROP_ABI } from "@/config/contracts";
@@ -10,9 +10,7 @@ import { parseEventLogs } from "viem";
 
 export function NFTMinter() {
   const { address } = useAccount();
-  const publicClient = usePublicClient();
   const [mintedTokenId, setMintedTokenId] = useState<bigint | null>(null);
-  const [isLoadingMetadata, setIsLoadingMetadata] = useState(false);
 
   // Read contract data
   const { data: totalSupply, refetch: refetchSupply } = useReadContract({
@@ -103,9 +101,10 @@ export function NFTMinter() {
         args: [address],
         value: BigInt(0), // Free mint
       });
-    } catch (error: any) {
+    } catch (error) {
       console.error("Mint error:", error);
-      toast.error(error.message || "Failed to mint NFT");
+      const errorMessage = error instanceof Error ? error.message : "Failed to mint NFT";
+      toast.error(errorMessage);
     }
   };
 
@@ -215,7 +214,7 @@ export function NFTMinter() {
         {/* Mint info */}
         {userMintCount !== undefined && mintLimit !== undefined && (
           <p className="text-center text-sm text-gray-500 mt-4">
-            You've minted {userMintCount.toString()} / {mintLimit.toString()} NFTs
+            You&apos;ve minted {userMintCount.toString()} / {mintLimit.toString()} NFTs
           </p>
         )}
 
@@ -259,7 +258,7 @@ export function NFTMinter() {
               </h3>
             </div>
             <p className="text-gray-700 mb-2">
-              You've successfully minted Builder Badge #{mintedTokenId.toString()}
+              You&apos;ve successfully minted Builder Badge #{mintedTokenId.toString()}
             </p>
             <p className="text-sm text-gray-600">
               Your NFT is now stored on the {targetChain.name} blockchain.

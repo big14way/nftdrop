@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createAppKit } from "@reown/appkit/react";
 import { WagmiProvider } from "wagmi";
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
-import { config, metadata, projectId, targetChain } from "@/config/wagmi";
+import { metadata, projectId, targetChain } from "@/config/wagmi";
 
 // Create QueryClient
 const queryClient = new QueryClient({

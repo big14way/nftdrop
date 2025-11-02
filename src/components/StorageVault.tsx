@@ -76,9 +76,10 @@ export function StorageVault() {
         args: [message],
         value: BigInt(0),
       });
-    } catch (error: any) {
+    } catch (error) {
       console.error("Store error:", error);
-      toast.error(error.message || "Failed to store message");
+      const errorMessage = error instanceof Error ? error.message : "Failed to store message";
+      toast.error(errorMessage);
     }
   };
 

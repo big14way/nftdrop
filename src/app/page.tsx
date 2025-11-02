@@ -16,7 +16,7 @@ type Tab = "mint" | "storage" | "tips";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("mint");
-  const { address, isConnected } = useAccount();
+  const { isConnected } = useAccount();
   const chainId = useChainId();
   const { switchChain } = useSwitchChain();
   const { open } = useAppKit();

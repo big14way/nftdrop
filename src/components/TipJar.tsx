@@ -63,9 +63,10 @@ export function TipJar() {
         to: CREATOR_ADDRESS,
         value,
       });
-    } catch (error: any) {
+    } catch (error) {
       console.error("Send error:", error);
-      toast.error(error.message || "Failed to send tip");
+      const errorMessage = error instanceof Error ? error.message : "Failed to send tip";
+      toast.error(errorMessage);
     }
   };
 
